@@ -6,16 +6,15 @@ class EndSignUpViewController: UIViewController {
 
     let titleLabel = UILabel().then {
         $0.text = "이제 시작해 볼까요?"
-        $0.textColor = .black
-        $0.backgroundColor = .white
+        $0.textColor = UIColor(named: "Gray-9")
         $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.numberOfLines = .max
     }
     
     let startButton = UIButton().then {
         $0.setTitle("시작하기", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }

@@ -6,50 +6,43 @@ class ThreeBodyInfoViewController: UIViewController {
     
     let titleLabel = UILabel().then {
         $0.text = "3대 중량을\n기록해주세요"
-        $0.textColor = .black
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 32)
+        $0.numberOfLines = .max
     }
     
     let kg1 = UILabel().then {
         $0.text = "Kg"
-        $0.backgroundColor = .clear
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Regular", size: 20)
+        $0.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     let kg2 = UILabel().then {
         $0.text = "Kg"
-        $0.backgroundColor = .clear
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Regular", size: 20)
+        $0.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     let kg3 = UILabel().then {
         $0.text = "Kg"
-        $0.backgroundColor = .clear
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Regular", size: 20)
+        $0.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     
     let squatLabel = UILabel().then {
         $0.text = "스쿼트"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let benchLabel = UILabel().then {
         $0.text = "벤치 프레스"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let deadliftLabel = UILabel().then {
         $0.text = "데드 리프트"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let squatTextField = UITextField().then {
@@ -71,12 +64,13 @@ class ThreeBodyInfoViewController: UIViewController {
     let howToButton = UIButton().then {
         $0.setTitle("어떻게 측정하나요?", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-6"), for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     
     let nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }
@@ -179,16 +173,15 @@ class HowToViewController: UIViewController {
     
     let howTitleLabel = UILabel().then {
         $0.text = "3대 중량은\n어떻게 측정하나요?"
-        $0.textColor = .black
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 32)
+        $0.numberOfLines = .max
     }
     
     let writeButton = UIButton().then {
         $0.setTitle("입력하기", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }
@@ -196,6 +189,7 @@ class HowToViewController: UIViewController {
     let skipButton = UIButton().then {
         $0.setTitle("나중에 할게요", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-6"), for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     
     override func viewDidLoad() {

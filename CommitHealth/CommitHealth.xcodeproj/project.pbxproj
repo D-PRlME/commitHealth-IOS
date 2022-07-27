@@ -163,13 +163,13 @@
 		4BD0518E287B19CF00231544 /* SignUpPage */ = {
 			isa = PBXGroup;
 			children = (
+				4BC93A42286C675000F6F447 /* ViewController.swift */,
 				4BD0518F287B1A1400231544 /* SignUpViewController.swift */,
 				4BD05191287B1D0D00231544 /* InfoViewController.swift */,
 				4B46EB4528843E7600CC9873 /* TermsViewController.swift */,
 				4B46EB4728854DF700CC9873 /* BodyInfoViewController.swift */,
 				4B46EB492886787600CC9873 /* ThreeBodyInfoViewController.swift */,
 				4B46EB4B2886F36500CC9873 /* EndSignUpViewController.swift */,
-				4BC93A42286C675000F6F447 /* ViewController.swift */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
