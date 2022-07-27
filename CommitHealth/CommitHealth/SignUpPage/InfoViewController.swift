@@ -6,18 +6,16 @@ import Then
 class InfoViewController: UIViewController {
 
     let titleLabel = UILabel().then {
-        $0.text = "이름을\n알려주세요"
-        $0.textColor = .black
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.text = "돌아오신 걸\n환영해요!"
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 32)
+        $0.numberOfLines = .max
     }
     
     let nameLabel = UILabel().then {
         $0.text = "이름"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let nameTextField = UITextField().then {
@@ -28,8 +26,7 @@ class InfoViewController: UIViewController {
     let stNumLabel = UILabel().then {
         $0.text = "학번"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let stNumTextField = UITextField().then {
@@ -40,14 +37,13 @@ class InfoViewController: UIViewController {
     let messageLabel = UILabel().then {
         $0.text = "학년,반,번호 순서로 4자리로 입력해주세요"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }
@@ -70,8 +66,6 @@ class InfoViewController: UIViewController {
         [titleLabel, nameLabel, nameTextField, stNumLabel, stNumTextField, nextButton, messageLabel].forEach({self.view.addSubview($0)})
         
         titleLabel.snp.makeConstraints {
-            $0.width.equalTo(252)
-            $0.height.equalTo(96)
             $0.leftMargin.equalToSuperview().offset(20)
             $0.topMargin.equalToSuperview().offset(70)
         }

@@ -9,10 +9,9 @@ class BodyInfoViewController: UIViewController {
     
     let titleLabel = UILabel().then {
         $0.text = "신체 프로필\n입력을 시작할게요"
-        $0.textColor = .black
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 32)
+        $0.numberOfLines = .max
     }
     
     let bodyInfoPickerView = UIPickerView()
@@ -48,12 +47,13 @@ class BodyInfoViewController: UIViewController {
     let skipButton = UIButton().then {
         $0.setTitle("나중에 할게요", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-6"), for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     
     let nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }
@@ -84,6 +84,7 @@ class BodyInfoViewController: UIViewController {
         }
         
         skipButton.snp.makeConstraints {
+            $0.width.equalTo(view.snp.width).inset(20)
             $0.bottom.equalTo(nextButton.snp.top).offset(-20)
             $0.centerX.equalTo(self.view.snp.centerX)
         }

@@ -6,20 +6,19 @@ class LoginViewController: UIViewController {
     
     let titleLabel = UILabel().then {
         $0.text = "돌아오신 걸\n환영해요!"
-        $0.textColor = .black
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 32)
+        $0.numberOfLines = .max
     }
     
     let idLabel = UILabel().then {
         $0.text = "아이디"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let idTextField = UITextField().then {
+        $0.placeholder = "someone@email.com"
         $0.borderStyle = .roundedRect
         $0.backgroundColor = UIColor(named: "Gray-1")
     }
@@ -27,8 +26,7 @@ class LoginViewController: UIViewController {
     let pwLabel = UILabel().then {
         $0.text = "비밀번호"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.backgroundColor = .white
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let pwTextField = UITextField().then {
@@ -38,9 +36,9 @@ class LoginViewController: UIViewController {
     }
     
     let nextButton = UIButton().then {
-        $0.setTitle("다음", for: .normal)
+        $0.setTitle("로그인", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
         $0.backgroundColor = UIColor(named: "Green-5")
         $0.layer.cornerRadius = 6
     }
@@ -48,27 +46,25 @@ class LoginViewController: UIViewController {
     let lostAccountButton = UIButton().then {
         $0.setTitle("계정을 잃어버렸나요?", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-6"), for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
     }
     
     let pwStatusOp1ChackLabel = UILabel().then {
         $0.text = "❌영어 대/소문자와 숫자를 포함해야 해요"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
-        $0.numberOfLines = 3
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let pwStatusOp2ChackLabel = UILabel().then {
         $0.text = "❌길이는 8 글자를 넘어야 해요"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
-        $0.numberOfLines = 3
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     let pwStatusOp3ChackLabel = UILabel().then {
         $0.text = "❌특수문자(!@#$&%*,.)를 포함해야 해요"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-Bold", size: 14)
-        $0.numberOfLines = 3
+        $0.font = UIFont(name: "Pretendard-ExtraBold", size: 14)
     }
     
     override func viewDidLoad() {
@@ -94,8 +90,6 @@ class LoginViewController: UIViewController {
     func startSetting() {
         [titleLabel, idLabel, idTextField, pwLabel, pwTextField, nextButton, lostAccountButton, pwStatusOp1ChackLabel, pwStatusOp2ChackLabel, pwStatusOp3ChackLabel].forEach({self.view.addSubview($0)})
         titleLabel.snp.makeConstraints {
-            $0.width.equalTo(252)
-            $0.height.equalTo(96)
             $0.leftMargin.equalToSuperview().offset(20)
             $0.topMargin.equalToSuperview().offset(70)
         }
@@ -147,6 +141,7 @@ class LoginViewController: UIViewController {
         }
         
         lostAccountButton.snp.makeConstraints {
+            $0.width.equalTo(view.snp.width).inset(20)
             $0.bottom.equalTo(nextButton.snp.top).offset(-20)
             $0.centerX.equalTo(self.view.snp.centerX)
         }

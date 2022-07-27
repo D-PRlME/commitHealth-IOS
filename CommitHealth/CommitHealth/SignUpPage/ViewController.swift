@@ -37,84 +37,79 @@ class ViewController: UIViewController {
     
     let page2TitleLabel = UILabel().then {
         $0.text = "딱 맞춘\n운동리스트"
-        $0.textColor = .black
-        $0.backgroundColor = .clear
+        $0.textColor = UIColor(named: "Gray-9")
         $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.numberOfLines = .max
     }
     
     let page2SubLabel = UILabel().then {
         $0.text = "막 학교에 야무지게\n할수있는 그런걸\n적는거다"
         $0.textColor = UIColor(named: "Gray-5")
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 27)
-        $0.numberOfLines = 3
+        $0.font = UIFont(name: "Pretendard-Medium", size: 28)
+        $0.numberOfLines = .max
     }
     
     let page3TitleLabel = UILabel().then {
         $0.text = "당신만을\n위한 추천 루틴"
-        $0.textColor = .black
-        $0.backgroundColor = .clear
-        $0.textAlignment = .center
+        $0.textColor = UIColor(named: "Gray-9")
         $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 2
+        $0.textAlignment = .center
+        $0.numberOfLines = .max
     }
     
     let page3SubLabel = UILabel().then {
         $0.text = "운동 목적에 맞는 루틴\n어쩌구"
         $0.textColor = UIColor(named: "Gray-5")
+        $0.font = UIFont(name: "Pretendard-Medium", size: 28)
         $0.textAlignment = .center
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 27)
-        $0.numberOfLines = 2
+        $0.numberOfLines = .max
     }
     
     let page4TitleLabel = UILabel().then {
         $0.text = "간단하게\n가입하고\n동기화"
-        $0.textColor = .black
-        $0.backgroundColor = .clear
-        $0.textAlignment = .right
+        $0.textColor = UIColor(named: "Gray-9")
         $0.font = UIFont(name: "Pretendard-Bold", size: 40)
-        $0.numberOfLines = 3
+        $0.textAlignment = .right
+        $0.numberOfLines = .max
     }
     
     let page4SubLabel = UILabel().then {
         $0.text = "이름, 학번만으로\n간단하게 가입하세요"
         $0.textColor = UIColor(named: "Gray-5")
+        $0.font = UIFont(name: "Pretendard-Medium", size: 28)
         $0.textAlignment = .right
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 27)
-        $0.numberOfLines = 2
+        $0.numberOfLines = .max
     }
     
     let titleLabel = UILabel().then {
-        $0.backgroundColor = .clear
-        $0.textColor = .black
-        $0.numberOfLines = 2
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
         $0.text = "DSM만을 위한\n개인 트레이너,"
+        $0.textColor = UIColor(named: "Gray-9")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
         $0.textAlignment = .center
+        $0.numberOfLines = .max
     }
     
     let subLabel = UILabel().then {
-        $0.backgroundColor = .clear
-        $0.textColor = .init(named: "Green-5")
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
         $0.text = "커밋헬스"
+        $0.textColor = UIColor(named: "Green-5")
+        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
         $0.textAlignment = .center
     }
     
     let loginButton = UIButton().then {
-        $0.backgroundColor = UIColor(named: "Gray-1")
-        $0.layer.cornerRadius = 6
         $0.setTitle("로그인", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
+        $0.backgroundColor = UIColor(named: "Gray-1")
+        $0.layer.cornerRadius = 6
     }
     
     let signUpButton = UIButton().then {
-        $0.backgroundColor = UIColor(named: "Green-5")
-        $0.layer.cornerRadius = 6
         $0.setTitle("가입하기", for: .normal)
         $0.setTitleColor(UIColor(named: "Gray-9"), for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 24)
+        $0.backgroundColor = UIColor(named: "Green-5")
+        $0.layer.cornerRadius = 6
     }
     
     override func viewDidLoad() {
@@ -162,15 +157,11 @@ class ViewController: UIViewController {
         titleLabel.snp.makeConstraints{
             $0.centerX.equalTo(self.page1.snp.centerX)
             $0.centerY.equalTo(self.page1.snp.centerY).offset(20)
-            $0.width.equalTo(237)
-            $0.height.equalTo(96)
         }
         
         subLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.centerX.equalTo(titleLabel.snp.centerX)
-            $0.width.equalTo(139)
-            $0.height.equalTo(48)
         }
         
         loginButton.snp.makeConstraints {
